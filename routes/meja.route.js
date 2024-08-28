@@ -1,0 +1,10 @@
+const express = require(`express`)
+const app = express()
+app.use(express.json())
+const mejaController = require('../controller/meja.controller')
+app.get("/", mejaController.getAllmeja)
+app.post("/", mejaController.addmeja)
+app.post("/find", mejaController.findmeja)
+app.put("/:id", mejaController.updatemeja)
+app.delete("/:id", mejaController.deletemeja)
+module.exports = app

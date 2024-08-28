@@ -1,0 +1,10 @@
+const express = require(`express`)
+const app = express()
+app.use(express.json())
+const menuController = require('../controller/menu.controller')
+app.get("/", menuController.getAllmenu)
+app.post("/", menuController.addmenu)
+app.post("/find", menuController.findmenu)
+app.put("/:id", menuController.updatemenu)
+app.delete("/:id", menuController.deletemenu)
+module.exports = app
